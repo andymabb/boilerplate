@@ -24,6 +24,24 @@
 </header>
  <main class="main">
  <p>Hello world!</p>
+ primary
+ secondary
+ tertiary
+ light
+ accent
+ accent--alt
+ --accent--ui
+ 
+ :root {
+    /* Color styles */
+    --primary: hsl(265, 38%, 13%);
+    --secondary: hsl(283, 6%, 45%);
+    --tertiary: hsl(257, 15%, 91%);
+    --light: hsl(270, 100%, 99%);
+    --accent: hsl(278, 100%, 92%);
+    --accent--alt: hsl(279, 100%, 97%);
+    --accent--ui: hsl(284, 55%, 66%);
+  }
  </main>
 
 <footer class="footer">
