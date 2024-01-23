@@ -1,4 +1,4 @@
-ul:root {
+:root {
     /* Color styles */
     --primary: hsl(265, 38%, 13%);
     --secondary: hsl(283, 6%, 45%);
