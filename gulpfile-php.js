@@ -57,6 +57,37 @@ function js() {
 }
 exports.js = js;
 
+function nunjucks() {
+    return gulp.src('src/pages/**/*.+(html|nunjucks|njk)')
+    .pipe(nunjucksRender({
+        path: ['src/templates']
+      }))
+      .pipe(gulp.dest('src'));
+}
+exports.nunjucks = nunjucks;
+
+// For use with nunjacks
+// function html(){
+//   return gulp.src('src/pages/**/*.+(html|nunjucks|njk)')
+//   .pipe(nunjucksRender({
+//       path: ['src/templates']
+//     }))
+//         .pipe(cachebust({type: 'timestamp'}))
+//         .pipe(minifyHTML({collapseWhitespace: true}))
+//         .pipe(gulp.dest(paths.html.dest))
+// }
+// exports.html = html;
+
+//For use without templating / nunjucks
+
+function html(){
+    return gulp.src(paths.html.src)
+        .pipe(cachebust({type: 'timestamp'}))
+        .pipe(minifyHTML({collapseWhitespace: true}))
+        .pipe(gulp.dest(paths.html.dest))
+}
+exports.html = html;
+
 function reload(done) {
   server.reload();
   done();
@@ -66,12 +97,27 @@ function reload(done) {
 
 function serve(done) {
   server.init({
-    proxy: "mysites.local/jo-new/dist"
+    proxy: "mysites.local/GITHUB-start/dist"
   });
   done();
 }
 
+// Static (html) files
+//function serve(done) {
+//  server.init({
+//    server: {
+//      baseDir: "./build"
+//    }
+//  });
+//  done();
+//}
+
 const watch = () => gulp.watch('src/**/*.*', gulp.series(html, css, js, reload));
 
+//with nunjacks
+//const dev = gulp.series(html, css, js, serve, nunjucks, watch);
+//exports.default=dev;
+
+//without nunjacks
 const dev = gulp.series(html, css, js, serve, watch);
 exports.default=dev;
