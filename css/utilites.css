@@ -1,0 +1,40 @@
+.fr, .fl{
+  margin: 0 auto 1em;
+}
+
+@media screen and (min-width:800px){
+  .fr{
+    float:right;
+    margin: 0 0 1em 1em;
+  }
+  .fl{
+    float:right;
+    margin: 0 1em 1em 0;
+  }
+}
+
+.c{text-align:center;}
+
+/*Centre without wrapper*/
+
+.center {
+  max-width: max-content;
+  margin-inline: auto;
+}
+
+.mb0{
+  margin-bottom: 0;
+}
+
+.dl-grid{
+	display:grid;
+	grid-template-columns: min-content 1fr;
+	grid-gap: 0 1em;
+}
+
+.dl-grid dt{
+	grid-column: 1;
+}
+.dl-grid dd{
+	grid-column: 2;
+}
