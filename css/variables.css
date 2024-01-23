@@ -1,4 +1,4 @@
-:root {
+ul:root {
     /* Color styles */
     --primary: hsl(265, 38%, 13%);
     --secondary: hsl(283, 6%, 45%);
@@ -7,4 +7,5 @@
     --accent: hsl(278, 100%, 92%);
     --accent--alt: hsl(279, 100%, 97%);
     --accent--ui: hsl(284, 55%, 66%);
+    --default-link: darkblue;
   }
