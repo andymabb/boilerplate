@@ -18,11 +18,18 @@
 </head>
 
 <body>
-<header>
+<header class="header">
 <?php include("inc/header.php); ?>
 <?php include("inc/mainnav.php); ?>
 </header>
+ <main class="main">
  <p>Hello world!</p>
+ </main>
+
+<footer class="footer">
+<?php include("inc/footer.php); ?>   
+</footer>
+ 
 
 
 </body>
