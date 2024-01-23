@@ -18,7 +18,10 @@
 </head>
 
 <body>
-
+<header>
+<?php include("inc/header.php); ?>
+<?php include("inc/mainnav.php); ?>
+</header>
  <p>Hello world!</p>
 
 
